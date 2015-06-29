@@ -1,11 +1,12 @@
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Created by superova on 19.06.2015.
  */
-public class Warehouse {
- int namber;
+public class Warehouse  {
+    int namber;
     int area;
     String address;
     String materiallyResponsible;
@@ -18,5 +19,8 @@ public class Warehouse {
         this.materiallyResponsible = materiallyResponsible;
 
     }
+
 }
+
+
 

@@ -1,30 +1,29 @@
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.Date;
 
 /**
  * Created by superova on 16.06.2015.
  */
-public class Product implements Comparable   {
+public class Product implements Comparable <Product>  {
  private  String nameOfProduct;
     private String maker;
     private  Date dateManufacture;
     private String categoryOfProduct;
     private  String unitOfMeasure;
-    private int unntPrice;
+    private int unitPrice;
     private int storageLife;
     private int quantity;
     private String storageConditions;
 
 
     public Product(String nameOfProduct, String maker, Date dateManufacture, String categoryOfProduct,
-                   String unitOfMeasure, int unntPrice, int storageLife, int quantity, String storageConditions) {
+                   String unitOfMeasure, int unitPrice, int storageLife, int quantity, String storageConditions) {
         this.nameOfProduct = nameOfProduct;
         this.maker = maker;
         this.dateManufacture = dateManufacture;
         this.categoryOfProduct = categoryOfProduct;
         this.unitOfMeasure = unitOfMeasure;
-        this.unntPrice = unntPrice;
+        this.unitPrice = unitPrice;
         this.storageLife = storageLife;
         this.quantity = quantity;
         this.storageConditions = storageConditions;
@@ -33,15 +32,14 @@ public class Product implements Comparable   {
     @Override
     public String toString() {
         return "Product{" +
-                "nameOfProduct='" + nameOfProduct + '\'' +
-                ", maker='" + maker + '\'' +
+                "nameOfProduct='" + nameOfProduct + '\n' +
+                ", maker='" + maker + '\n' +
                 ", dateManufacture=" + dateManufacture +
-                ", categoryOfProduct='" + categoryOfProduct + '\'' +
-                ", unitOfMeasure='" + unitOfMeasure + '\'' +
-                ", unntPrice=" + unntPrice +
+                ", categoryOfProduct='" + categoryOfProduct + '\n' +
+                ", unitOfMeasure='" + unitOfMeasure + '\n' +
                 ", storageLife=" + storageLife +
                 ", quantity=" + quantity +
-                ", storageConditions='" + storageConditions + '\n' +
+                ", storageConditions='" + storageConditions +
                 '}';
     }
 
@@ -86,12 +84,12 @@ public class Product implements Comparable   {
         this.unitOfMeasure = unitOfMeasure;
     }
 
-    public int getUnntPrice() {
-        return unntPrice;
+    public int getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setUnntPrice(int unntPrice) {
-        this.unntPrice = unntPrice;
+    public void setUnitPrice(int unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     public int getStorageLife() {
@@ -119,7 +117,20 @@ public class Product implements Comparable   {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Product product) {
+
+            return  this.nameOfProduct.compareTo(product.nameOfProduct) + this.maker.compareTo(product.maker) +
+                    this.unitOfMeasure.compareTo(product.unitOfMeasure) + (this.unitPrice - product.unitPrice);
+
     }
-}
+
+    public  class UnitOfMeasureComparator implements Comparator<Product> {
+
+        @Override
+        public int compare(Product o1, Product o2) {
+             o1.getUnitOfMeasure().compareTo(o2.getUnitOfMeasure());
+              return 1;
+
+        }
+
+    }  }
