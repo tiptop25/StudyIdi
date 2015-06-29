@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) {
        // Date dateManufacture = new Date();
         Set<Product> product = new TreeSet<Product>();
-        Set<Product>warehouseCollection1 = new TreeSet<>();
-        Set<Warehouse>warehouseCollection2 = new TreeSet<>();
+
+        Set<Product>warehouseCollection2 = new TreeSet<>();
 
         Warehouse warehouse1 = new Warehouse(1,200,"Promzona","Ivanov");
         Warehouse warehouse2 = new Warehouse(2,500,"Center","Petrov");
@@ -31,6 +31,9 @@ public class Main {
 
           for (Product p:product)
         System.out.println(p);
+
+        for (Product p:Warehouse.war1)
+            System.out.println(p);
 
 
 
