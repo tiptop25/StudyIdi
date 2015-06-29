@@ -21,6 +21,9 @@ public class Main {
         product.add(product4);
         product.add(product5);
 
+          for (Product p:product)
+        System.out.println(p);
+
 
 
 
