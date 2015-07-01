@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.util.*;
 
 /**
@@ -8,11 +7,11 @@ public class Main {
     public static void main(String[] args) {
        // Date dateManufacture = new Date();
         Set<Product> product = new TreeSet<Product>();
+        // TreeSet warhouse1 = new TreeSet(Product.UnitOfMeasureComparator);
 
-        Set<Product>warehouseCollection2 = new TreeSet<>();
 
-        Warehouse warehouse1 = new Warehouse(1,200,"Promzona","Ivanov");
-        Warehouse warehouse2 = new Warehouse(2,500,"Center","Petrov");
+        //  Warehouse warehouse1 = new Warehouse(1,200,"Promzona","Ivanov");
+       // Warehouse warehouse2 = new Warehouse(2,500,"Center","Petrov");
 
 
         Product product1 = new Product("Milk","Bashtanka", new Date() ,"Perishable","Hackage 0,5 liter",10,5,100,"refrigerator");
@@ -29,11 +28,11 @@ public class Main {
         product.add(product5);
         product.add(product6);
 
-          for (Product p:product)
-        System.out.println(p);
+     //     for (Product p:product)
+      //  System.out.println(p);
 
-        for (Product p:Warehouse.war1)
-            System.out.println(p);
+
+
 
 
 

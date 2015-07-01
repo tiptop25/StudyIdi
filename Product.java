@@ -128,9 +128,9 @@ public class Product implements Comparable <Product>  {
 
         @Override
         public int compare(Product o1, Product o2) {
-             o1.getUnitOfMeasure().compareTo(o2.getUnitOfMeasure());
-              return 1;
+            return   o1.getUnitOfMeasure().compareTo(o2.getUnitOfMeasure());
 
         }
+
 
     }  }
